@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Calculator</title>
+    <link rel="icon" href="cal icon.png">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+
+    <div class="keyboard">
+        
+    
+        <img src="sun.jpg" alt="togglebar" id="icon">
+        
+
+        <form name="cal">
+
+            <form name="equal" value="=">
+                <input type="text" name="display">
+            <br><br>
+            <input type="button" value="9" onclick="cal.display.value+='9'">
+            <input type="button" value="8" onclick="cal.display.value+='8'">
+            <input type="button" value="7" onclick="cal.display.value+='7'">
+            <input type="button" value="+" onclick="cal.display.value+='+'">
+            <br><br>
+            <input type="button" value="6" onclick="cal.display.value+='6'">
+            <input type="button" value="5" onclick="cal.display.value+='5'">
+            <input type="button" value="4" onclick="cal.display.value+='4'">
+            <input type="button" value="-" onclick="cal.display.value+='-'">
+            <br><br>
+            <input type="button" value="3" onclick="cal.display.value+='3'">
+            <input type="button" value="2" onclick="cal.display.value+='2'">
+            <input type="button" value="1" onclick="cal.display.value+='1'">
+            <input type="button" value="*" onclick="cal.display.value+='*'">
+            <br><br>
+            <input type="button" value="0" onclick="cal.display.value+='0'">
+            <input type="button" value="/" onclick="cal.display.value+='/'">
+            <input type="button" value="%" onclick="cal.display.value+='%'">
+            <input type="button" value="AC" onclick="cal.display.value=''">
+            <br><br>
+            <div class="bottom">
+            <input  id="equal" type="button" value="=" onclick="cal.display.value= eval (cal.display.value)">
+            <input  id="del" type="button" value="Del" onclick="cal.display.value=cal.display.value.substring(0,cal.display.value.length*1-1)">
+            </div>
+
+
+        </form>
+    </div>
+
+
+<script>
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        document.body.classList.toggle("light-theme"); 
+        if(document.body.classList.contains("light-theme")) {
+            icon.src = "moon.png";
+        } else{icon.src = "sun.jpg";
+        }
+    }
+</script>    
+</body>
+</html>
